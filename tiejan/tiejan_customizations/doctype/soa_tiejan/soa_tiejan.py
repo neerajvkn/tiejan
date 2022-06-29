@@ -129,13 +129,16 @@ def get_report_pdf(doc, consolidated=True):
 					break
 				else:
 					new_sorted_sinv_list = []
-		print (new_sorted_sinv_list)
+		customer_site = frappe.db.get_value("Customer", filters.party[0], "customer_site" )
+		customer_name = frappe.db.get_value("Customer", filters.party[0], "customer_name" )
 		html = frappe.render_template(
 			template_path,
 			{
 				"filters": filters,
 				"data": res,
+				"customer_site" : customer_site,
 				"new_sorted_list" :new_sorted_sinv_list,
+				"customer_name" : customer_name,
 				"ageing": ageing[0] if (doc.include_ageing and ageing) else None,
 				"letter_head": letter_head if doc.letter_head else None,
 				"terms_and_conditions": frappe.db.get_value(

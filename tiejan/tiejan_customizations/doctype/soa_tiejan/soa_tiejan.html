@@ -15,7 +15,7 @@
 	</div>
 	<h2 class="text-center">{{ _("STATEMENTS OF ACCOUNTS") }}</h2>
 	<div>
-		<h5 style="float: left;">{{ _("Customer: ") }} <b>{{filters.party[0] }}</b></h5>
+		<h5 style="float: left;">{{ _("Customer ID: ") }} <b>{{filters.party[0] }} </b> | Customer Name : <b> {{customer_name}}</b> | {{ _("Customer Site: ") }} : <b> {{ customer_site }}</b></h5>
 		<h5 style="float: right;">
 			{{ _("Date: ") }}
 			<b>{{ frappe.format(filters.from_date, 'Date')}}
