@@ -287,13 +287,14 @@
    "options": "Terms and Conditions"
   },
   {
+   "default": "0",
    "fieldname": "selected_person_only",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Show invoices only for selected sales person"
   }
  ],
  "links": [],
- "modified": "2022-06-29 12:54:51.476656",
+ "modified": "2022-06-29 17:43:06.069655",
  "modified_by": "Administrator",
  "module": "Tiejan Customizations",
  "name": "SOA Tiejan",
