@@ -120,18 +120,13 @@ def get_report_pdf(doc, consolidated=True):
 		if my_dict:
 			newlist = sorted(my_dict, key=lambda d: d['sales_person_x']) 
 		new_sorted_sinv_list = [{a : list(b)} for a, b in groupby(newlist, key=lambda x:x['sales_person_x'])]
-		print("\n\n\n\n")
-		print(doc.selected_person_only)
-		
 		if str(doc.selected_person_only) == "1":
-			print("loop executed")
 			for sp in new_sorted_sinv_list:
 				if doc.collection_name in sp:
 					new_sorted_sinv_list = [sp]
 					break
 				else:
 					new_sorted_sinv_list = []
-		print("\n\n\n\n")
 		customer_site = frappe.db.get_value("Customer", filters.party[0], "customer_site" )
 		customer_name = frappe.db.get_value("Customer", filters.party[0], "customer_name" )
 		html = frappe.render_template(
