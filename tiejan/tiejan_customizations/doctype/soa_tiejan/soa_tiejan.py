@@ -100,7 +100,6 @@ def get_report_pdf(doc, consolidated=True):
 
 		if len(res) == 3:
 			continue
-		###################################################################3
 		from itertools import groupby
 
 		res_with_sales_person = []
@@ -121,7 +120,16 @@ def get_report_pdf(doc, consolidated=True):
 		if my_dict:
 			newlist = sorted(my_dict, key=lambda d: d['sales_person_x']) 
 		new_sorted_sinv_list = [{a : list(b)} for a, b in groupby(newlist, key=lambda x:x['sales_person_x'])]
-		#################################################################################################3
+	
+		if doc.selected_person_only:
+			for sp in new_sorted_sinv_list:
+				if doc.collection_name in sp:
+				# if 'Ali Satar Ali,Yaser Mohammed Saoodi' in sp:
+					new_sorted_sinv_list = [sp]
+					break
+				else:
+					new_sorted_sinv_list = []
+		print (new_sorted_sinv_list)
 		html = frappe.render_template(
 			template_path,
 			{
