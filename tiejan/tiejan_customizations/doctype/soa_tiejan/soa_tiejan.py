@@ -13,7 +13,7 @@ from erpnext.accounts.party import get_party_account_currency
 from erpnext.accounts.report.accounts_receivable_summary.accounts_receivable_summary import (
 	execute as get_ageing,
 )
-from erpnext.accounts.report.general_ledger.general_ledger import execute as get_soa
+from tiejan.tiejan_customizations.gl_controller import execute as get_soa
 
 import datetime
 import json
