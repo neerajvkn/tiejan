@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include tiejan *.css
+recursive-include tiejan *.csv
+recursive-include tiejan *.html
+recursive-include tiejan *.ico
+recursive-include tiejan *.js
+recursive-include tiejan *.json
+recursive-include tiejan *.md
+recursive-include tiejan *.png
+recursive-include tiejan *.py
+recursive-include tiejan *.svg
+recursive-include tiejan *.txt
+recursive-exclude tiejan *.pyc
